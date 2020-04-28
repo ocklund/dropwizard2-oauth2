@@ -41,7 +41,7 @@ public class PingResourceTest {
             .get();
 
         assertThat(response.getStatus(), is(OK.getStatusCode()));
-        assertThat(response.readEntity(String.class), is("{\"answer\": \"pong\"}"));
+        assertThat(response.readEntity(String.class), is("{\"message\":\"pong\"}"));
     }
 
     @Test
@@ -87,7 +87,7 @@ public class PingResourceTest {
             .get();
 
         assertThat(response.getStatus(), is(OK.getStatusCode()));
-        assertThat(response.readEntity(String.class), is("{\"answer\": \"authenticated pong for user alice\"}"));
+        assertThat(response.readEntity(String.class), is("{\"message\":\"Authenticated pong for user alice\"}"));
     }
 
     private String getAccessToken() {
